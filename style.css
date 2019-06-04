@@ -26,14 +26,30 @@ body {
 .menu {
     position: absolute;
     width: 200px;
-    padding: 10px;
-    background: rgb(173, 165, 165);
+    padding: 0px;
+    background: rgb(233, 217, 217);
 }
 
 a {
     color: grey;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    background: white;
+    padding: 7px 16px;
+    border-bottom: 1px solid lightgray;
 }
 
 li a:hover {
     color: blue;
+}
+
+#changeBgSize:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    border-bottom: 0;
 }

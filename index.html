@@ -10,8 +10,8 @@
     <title>Desktop</title>
 </head>
 
-<body>
-    <div class="desktop" contextmenu="mymenu">
+<body oncontextmenu="return false;">
+    <div class="desktop">
         <!-- <div class="window" id="drag">
             <div class="title-bar">
                 <span class="window-text" id="dragWindow">Window - Mozilla Firefox</span>
@@ -24,16 +24,18 @@
             </div>
         </div> -->
 
-        <ul class="menu">
+        <ul class="menu hidden">
             <li id="changeBg">
                 <a href="javascript:void(0)">Change Background</a>
 
                 <input type="file" class="file hidden">
             </li>
             <li id="changeBgSize">
-                <ul class="submenu">
-                    <li id="bgSizeCover"><a href="javascript:void(0)">Cover</a></li>
-                    <li id="bgSizeContain"><a href="javascript:void(0)">Contain</a></li>
+                <a href="" id="changeSize">Change Size</a>
+
+                <ul class="submenu hidden">
+                    <li id="bgSizeCover"><a>Cover</a></li>
+                    <li id="bgSizeContain"><a>Contain</a></li>
                 </ul>
             </li>
         </ul>
