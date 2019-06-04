@@ -13,6 +13,7 @@ var desktop = {
         $('#addWindow').onclick = function() {
             var lastWindow = collection.objects.reverse()[0];
             var newWindow = new ourWindow();
+            newWindow.model.id = lastWindow.model.id + 1;
             newWindow.model.top = parseInt(lastWindow.model.top) + 12 + 'px';
             newWindow.model.left = parseInt(lastWindow.model.left) + 12 + 'px';
             newWindow.model['z-index'] = lastWindow.model['z-index'] + 1;
@@ -31,12 +32,5 @@ var desktop = {
         }
 
         localStorage.setItem('desktop', JSON.stringify(model))
-    },
-
-    // contextmenu: function(event) {
-    //     var menu = $('.menu');
-    //     menu.classList.toggle("hidden");
-    //     menu.style.top = event.clientY - 15 + "px";
-    //     menu.style.left = event.clientX + "px";
-    // }
+    }
 }

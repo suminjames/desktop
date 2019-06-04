@@ -21,9 +21,6 @@ function elementDrag(e) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element to the new calculated
-    // e.target.style.left = 0;
-    // e.target.style.top = 0;
-    console.log(elemnt)
     elemnt.style.top = elemnt.offsetTop - pos2 + "px";
     elemnt.style.left = elemnt.offsetLeft - pos1 + "px";
 }
@@ -34,7 +31,9 @@ function closeDragElement() {
     document.onmousemove = null;
 }
 var ourWindow = function() {
+    this.viewObject = null;
     this.model = {
+        id: 0,
         height: '500px',
         width: '600px',
         top: '20px',
@@ -56,27 +55,39 @@ var ourWindow = function() {
     }
 
     this.close = function() {
+        var newThis = this;
+        this.viewObject.remove();
+        debugger
 
+        collection.objects = collection.objects.filter(function(item) {
+            return (item.model.id != newThis.model.id)
+        })
+        delete(this);
     }
 
     this.render = function() {
+        var thisWindow = this;
         var originalWindow = $('#originalWindow');
-        var cloneWindow = originalWindow.cloneNode(true);
-        cloneWindow.style.top = this.model.top;
-        cloneWindow.style.height = this.model.height;
-        cloneWindow.style.width = this.model.width;
-        cloneWindow.style.left = this.model.left;
-        cloneWindow.style.zIndex = this.model['z-index'];
-        cloneWindow.id = "random";
-        cloneWindow.classList.remove('hidden');
+        this.viewObject = originalWindow.cloneNode(true);
+        this.viewObject.style.top = this.model.top;
+        this.viewObject.style.height = this.model.height;
+        this.viewObject.style.width = this.model.width;
+        this.viewObject.style.left = this.model.left;
+        this.viewObject.style.zIndex = this.model['z-index'];
+        this.viewObject.id = "random";
+        this.viewObject.classList.remove('hidden');
         var desktop = $('.desktop');
-        cloneWindow.addEventListener('mousedown', dragMouseDown);
-        desktop.append(cloneWindow);
+        this.viewObject.querySelector('.fa-times').addEventListener('click', function() {
+            thisWindow.close();
+        });
+        this.viewObject.addEventListener('mousedown', dragMouseDown);
+        desktop.append(this.viewObject);
     }
 
 }
 
 newWindow = new ourWindow();
+originalWindow.cloneNode(true);
 newWindow.render();
 
 collection.objects.push(newWindow);
