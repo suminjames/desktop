@@ -1,16 +1,17 @@
 var desktop = {
-    background: "white",
+    background: "#123333",
     height: '100%',
+    width: '100%',
     backgroundPosition: "center",
     backgroundSize: "cover",
-    changeBg: function(val) {
-        document.querySelector('.desktop').style.background = val;
-        this.background = val;
-    },
-    changeHeight(val) {
-        document.querySelector('.desktop').style.height = val;
-        this.height = val;
+    render: function() {
+        var desktop = document.querySelector('.desktop');
+        desktop.style.height = this.height;
+        desktop.style.width = this.width;
+        desktop.style.backgroundSize = this.backgroundSize;
+        desktop.style.background = this.background;
+        desktop.style.backgroundPosition = this.backgroundPosition;
     }
 }
-desktop.changeBg('blue')
-desktop.changeHeight('100%')
+desktop.background = 'yellow'
+desktop.render();
