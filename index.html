@@ -24,17 +24,21 @@
             </div>
         </div> -->
 
-        <menu type="context" id="mymenu">
-            <menuitem label="Change Wallpaper" class="change-wallpaper">
-            </menuitem>
-            <menuitem label="Remove Wallpaper" class="remove-wallpaper">
-            </menuitem>
-            <menuitem label="New Window" class="add-window">
-            </menuitem>
-        </menu>
+        <ul class="menu">
+            <li id="changeBg">
+                <a href="javascript:void(0)">Change Background</a>
+
+                <input type="file" class="file hidden">
+            </li>
+            <li id="changeBgSize">
+                <ul class="submenu">
+                    <li id="bgSizeCover"><a href="javascript:void(0)">Cover</a></li>
+                    <li id="bgSizeContain"><a href="javascript:void(0)">Contain</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
-    <input type="file" class="file hidden">
     <script src="script.js"></script>
 
 </body>

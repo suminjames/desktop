@@ -22,3 +22,18 @@ body {
 .hidden {
     display: none;
 }
+
+.menu {
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    background: rgb(173, 165, 165);
+}
+
+a {
+    color: grey;
+}
+
+li a:hover {
+    color: blue;
+}
