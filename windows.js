@@ -57,11 +57,11 @@ var ourWindow = function() {
     this.close = function() {
         var newThis = this;
         this.viewObject.remove();
-        debugger
 
         collection.objects = collection.objects.filter(function(item) {
             return (item.model.id != newThis.model.id)
         })
+
         delete(this);
     }
 

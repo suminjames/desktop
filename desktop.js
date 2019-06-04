@@ -1,6 +1,6 @@
 var desktop = {
     background: "#123333",
-    height: '90%',
+    height: '100%',
     width: '100%',
     backgroundSize: "auto",
     render: function() {
