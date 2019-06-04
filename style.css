@@ -7,6 +7,7 @@ body {
     width: 500px;
     background: green;
     height: 236px;
+    overflow: hidden;
 }
 
 .title-bar {
@@ -52,4 +53,34 @@ li a:hover {
 
 .submenu li {
     border-bottom: 0;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.title-bar {
+    width: 100%;
+}
+
+.window {
+    border: 1px solid white;
+    position: absolute;
+}
+
+.window * {
+    box-sizing: border-box;
+}
+
+.content {
+    min-height: 100%;
+    background: white;
+}
+
+.clear-fix {
+    display: table;
 }
