@@ -4,6 +4,7 @@ var ourWindow = function() {
         width: '600px',
         top: '20px',
         left: '100px',
+        'z-index': 0,
         state: 'normal'
     }
 
@@ -30,6 +31,7 @@ var ourWindow = function() {
         cloneWindow.style.height = this.model.height;
         cloneWindow.style.width = this.model.width;
         cloneWindow.style.left = this.model.left;
+        cloneWindow.style.zIndex = this.model['z-index'];
         cloneWindow.id = "random";
         cloneWindow.classList.remove('hidden');
         var desktop = $('.desktop');
@@ -40,3 +42,5 @@ var ourWindow = function() {
 
 newWindow = new ourWindow();
 newWindow.render();
+
+collection.objects.push(newWindow);

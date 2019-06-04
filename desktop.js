@@ -11,10 +11,13 @@ var desktop = {
         desktop.style.backgroundSize = this.backgroundSize;
 
         $('#addWindow').onclick = function() {
+            var lastWindow = collection.objects.reverse()[0];
             var newWindow = new ourWindow();
-            newWindow.model.top = parseInt(newWindow.model.top) + 12 + 'px';
-            newWindow.model.left = parseInt(newWindow.model.left) + 12 + 'px';
+            newWindow.model.top = parseInt(lastWindow.model.top) + 12 + 'px';
+            newWindow.model.left = parseInt(lastWindow.model.left) + 12 + 'px';
+            newWindow.model['z-index'] = lastWindow.model['z-index'] + 1;
             newWindow.render();
+            collection.objects.push(newWindow);
         }
         console.log(desktop.style.backgroundSize);
     },

@@ -1,4 +1,4 @@
-bootloader = function() {
+desktopBootloader = function() {
     storeddata = localStorage.getItem('desktop');
     actualData = JSON.parse(storeddata);
     if (!!actualData) {
@@ -8,12 +8,27 @@ bootloader = function() {
         desktop.backgroundSize = actualData.backgroundSize;
     }
 }
-debugger
-bootloader();
+
+windowsBootloader = function() {
+    storeddata = localStorage.getItem('windows');
+    actualData = JSON.parse(storeddata);
+    if (!!actualData) {
+        actualData.forEach(function(windowData) {
+            var newWindow = new ourWindow();
+            newWindow.model = windowData;
+            newWindow.render();
+            collection.objects.push(newWindow);
+        });
+    }
+}
+
+desktopBootloader();
+windowsBootloader();
 desktop.render();
 
 setInterval(() => {
-    desktop.save()
+    desktop.save();
+    collection.save();
 }, 2000);
 
 var menu = {
@@ -61,3 +76,7 @@ $('.desktop').addEventListener('contextmenu', function() {
 $('.desktop').addEventListener('click', function() {
     menu.classList.add("hidden");
 })
+
+// $('#delete').addEventListener('click', function() {
+//     localStorage.setItem('windows', '');
+// })
