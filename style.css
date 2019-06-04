@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.window {
+    width: 500px;
+    background: green;
+    height: 236px;
+}
+
+.title-bar {
+    background: black;
+    padding: 10px;
+    color: white;
+}
+
+.icons {
+    float: right;
+}
+
+.hidden {
+    display: none;
+}

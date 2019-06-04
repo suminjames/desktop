@@ -5,10 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Desktop</title>
 </head>
 
 <body>
+    <div class="desktop" contextmenu="mymenu">
+        <!-- <div class="window" id="drag">
+            <div class="title-bar">
+                <span class="window-text" id="dragWindow">Window - Mozilla Firefox</span>
+                <div class="icons">
+                    <i class="fa fa-window-minimize" id="minimize"></i>
+                    <i class="fa fa-window-restore" id="restore"></i>
+                    <i class="fa fa-window-maximize" id="maximize"></i>
+                    <i class="fa fa-times-circle"></i>
+                </div>
+            </div>
+        </div> -->
+
+        <menu type="context" id="mymenu">
+            <menuitem label="Change Wallpaper" class="change-wallpaper">
+            </menuitem>
+            <menuitem label="Remove Wallpaper" class="remove-wallpaper">
+            </menuitem>
+            <menuitem label="New Window" class="add-window">
+            </menuitem>
+        </menu>
+    </div>
+
+    <input type="file" class="file hidden">
+    <script src="script.js"></script>
 
 </body>
 
