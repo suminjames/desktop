@@ -76,7 +76,3 @@ $('.desktop').addEventListener('contextmenu', function() {
 $('.desktop').addEventListener('click', function() {
     menu.classList.add("hidden");
 })
-
-// $('#delete').addEventListener('click', function() {
-//     localStorage.setItem('windows', '');
-// })

@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+.desktop {
+    position: relative;
+}
+
 .window {
     width: 500px;
     background: green;
@@ -68,7 +72,7 @@ li a:hover {
 }
 
 .window {
-    border: 1px solid white;
+    border: 1px solid black;
     position: absolute;
 }
 
@@ -83,4 +87,39 @@ li a:hover {
 
 .clear-fix {
     display: table;
+}
+
+.show-top {
+    z-index: 99;
+}
+
+.maximize {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.minimize {
+    width: 400px !important;
+    height: 38px !important;
+    bottom: 0 !important;
+    top: auto !important;
+}
+
+.fa-window-restore {
+    position: absolute;
+    right: 28px;
+}
+
+.fa-window-minimize {
+    position: absolute;
+    right: 53px;
+    top: 7px;
+}
+
+.fa-window-maximize {
+    position: absolute;
+    right: 29px;
 }

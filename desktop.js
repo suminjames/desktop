@@ -12,7 +12,11 @@ var desktop = {
 
         $('#addWindow').onclick = function() {
             var lastWindow = collection.objects.reverse()[0];
+
             var newWindow = new ourWindow();
+            if (!lastWindow) {
+                lastWindow = newWindow
+            }
             newWindow.model.id = lastWindow.model.id + 1;
             newWindow.model.top = parseInt(lastWindow.model.top) + 12 + 'px';
             newWindow.model.left = parseInt(lastWindow.model.left) + 12 + 'px';
@@ -20,7 +24,6 @@ var desktop = {
             newWindow.render();
             collection.objects.push(newWindow);
         }
-        console.log(desktop.style.backgroundSize);
     },
 
     save: function() {
