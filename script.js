@@ -29,7 +29,7 @@ desktop.render();
 setInterval(() => {
     desktop.save();
     collection.save();
-}, 2000);
+}, 1000);
 
 var menu = {
     changeBg: function() {
