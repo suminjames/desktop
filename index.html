@@ -12,17 +12,6 @@
 
 <body oncontextmenu="return false;">
     <div class="desktop">
-        <!-- <div class="window" id="drag">
-            <div class="title-bar">
-                <span class="window-text" id="dragWindow">Window - Mozilla Firefox</span>
-                <div class="icons">
-                    <i class="fa fa-window-minimize" id="minimize"></i>
-                    <i class="fa fa-window-restore" id="restore"></i>
-                    <i class="fa fa-window-maximize" id="maximize"></i>
-                    <i class="fa fa-times-circle"></i>
-                </div>
-            </div>
-        </div> -->
 
         <ul class="menu hidden">
             <li id="changeBg">
@@ -39,8 +28,29 @@
                 </ul>
             </li>
         </ul>
-    </div>
 
+        <div id="originalWindow" class="window hidden">
+            <div class="title-bar clear-fix" id="originalWindowBar">
+                <div class="title float-left">New Window</div>
+                <div class="control-buttons float-right">
+                    <i class="fas fa-window-minimize"></i>
+                    <i class="fas fa-window-maximize"></i>
+                    <i class="fas fa-window-restore"></i>
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" id="addWindow">Add Window</a>
+
+    </div>
+    <script src="iQuery.js"></script>
+    <script src="windows.js"></script>
+
+    <script src="desktop.js"></script>
     <script src="script.js"></script>
 
 </body>

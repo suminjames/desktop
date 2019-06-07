@@ -1,41 +1,4 @@
-var $ = function(query) {
-    return (document.querySelector(query));
-}
-
-var desktop = {
-    background: "#123333",
-    height: '90%',
-    width: '100%',
-    backgroundSize: "auto",
-    render: function() {
-        var desktop = $('.desktop');
-        desktop.style.height = this.height;
-        desktop.style.width = this.width;
-        desktop.style.background = this.background;
-        desktop.style.backgroundSize = this.backgroundSize;
-        console.log(desktop.style.backgroundSize);
-    },
-
-    save: function() {
-        var model = {
-            background: this.background,
-            height: this.height,
-            width: this.width,
-            backgroundSize: this.backgroundSize
-        }
-
-        localStorage.setItem('desktop', JSON.stringify(model))
-    },
-
-    // contextmenu: function(event) {
-    //     var menu = $('.menu');
-    //     menu.classList.toggle("hidden");
-    //     menu.style.top = event.clientY - 15 + "px";
-    //     menu.style.left = event.clientX + "px";
-    // }
-}
-
-bootloader = function() {
+desktopBootloader = function() {
     storeddata = localStorage.getItem('desktop');
     actualData = JSON.parse(storeddata);
     if (!!actualData) {
@@ -45,13 +8,28 @@ bootloader = function() {
         desktop.backgroundSize = actualData.backgroundSize;
     }
 }
-debugger
-bootloader();
+
+windowsBootloader = function() {
+    storeddata = localStorage.getItem('windows');
+    actualData = JSON.parse(storeddata);
+    if (!!actualData) {
+        actualData.forEach(function(windowData) {
+            var newWindow = new ourWindow();
+            newWindow.model = windowData;
+            newWindow.render();
+            collection.objects.push(newWindow);
+        });
+    }
+}
+
+desktopBootloader();
+windowsBootloader();
 desktop.render();
 
 setInterval(() => {
-    desktop.save()
-}, 2000);
+    desktop.save();
+    collection.save();
+}, 1000);
 
 var menu = {
     changeBg: function() {
