@@ -14,6 +14,10 @@
     <div class="desktop">
 
         <ul class="menu hidden">
+            <li id="addWindow">
+                <a href="javascript:void(0)">New Timeline</a>
+
+            </li>
             <li id="changeBg">
                 <a href="javascript:void(0)">Change Background</a>
 
@@ -30,8 +34,8 @@
         </ul>
 
         <div id="originalWindow" class="window hidden">
-            <div class="title-bar clear-fix" id="originalWindowBar">
-                <div class="title float-left">New Window</div>
+            <div class="title-bar clear-fix">
+                <div class="title float-left" id="randomWindow">New Window</div>
                 <div class="control-buttons float-right">
                     <i class="fas fa-window-minimize"></i>
                     <i class="fas fa-window-maximize"></i>
@@ -44,7 +48,6 @@
             </div>
         </div>
 
-        <a href="javascript:void(0)" id="addWindow">Add Window</a>
 
     </div>
     <script src="iQuery.js"></script>
