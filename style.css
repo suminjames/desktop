@@ -5,6 +5,7 @@ body {
 
 .desktop {
     position: relative;
+    overflow: hidden;
 }
 
 .window {
@@ -15,7 +16,7 @@ body {
 }
 
 .title-bar {
-    background: black;
+    background: #383434;
     padding: 10px;
     color: white;
 }
@@ -32,19 +33,20 @@ body {
     position: absolute;
     width: 200px;
     padding: 0px;
-    background: rgb(233, 217, 217);
+    z-index: 999999;
 }
 
 a {
-    color: grey;
+    color: #3e3030;
     text-decoration: none;
 }
 
 li {
+    cursor: pointer;
     list-style-type: none;
-    background: white;
+    background: #efe4e4;
     padding: 7px 16px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #dac4c4;
 }
 
 li a:hover {
@@ -72,7 +74,7 @@ li a:hover {
 }
 
 .window {
-    border: 1px solid black;
+    border: 1px solid #262121;
     position: absolute;
 }
 
@@ -109,17 +111,28 @@ li a:hover {
 }
 
 .fa-window-restore {
+    cursor: pointer;
     position: absolute;
     right: 28px;
 }
 
 .fa-window-minimize {
+    cursor: pointer;
     position: absolute;
     right: 53px;
     top: 7px;
 }
 
 .fa-window-maximize {
+    cursor: pointer;
     position: absolute;
     right: 29px;
+}
+
+.fa-times {
+    cursor: pointer;
+}
+
+#randomWindow {
+    cursor: pointer;
 }
